@@ -2,7 +2,7 @@
 // functional component
 
 import React from 'react';
-import UserInfor from './UserInfor';
+import AddUserInfor from './AddUserInfor';
 import DisplayInfor from './DisplayInfor';
 
 class MyComponent extends React.Component {
@@ -13,6 +13,20 @@ class MyComponent extends React.Component {
             { id: 3, name: 'Nahihe', age: '27' }
         ]
     }
+
+    handleAddNewUser = (userObj) => {
+        // let listUserNew = this.state.listUsers;
+
+        // listUserNew.unshift(userObj);
+        // this.setState({
+        //     listUsers: listUserNew
+        // })
+
+        this.setState({
+            listUsers: [userObj, ...this.state.listUsers]
+        });
+    };
+
     //JSX
     render() {
 
@@ -20,10 +34,14 @@ class MyComponent extends React.Component {
 
         return (
             <div>
-                <UserInfor />
+                <AddUserInfor
+                    handleAddNewUser={this.handleAddNewUser} />
                 <br></br>
+
                 <br></br>
-                <DisplayInfor listUsers={this.state.listUsers} />
+                <DisplayInfor
+                    listUsers={this.state.listUsers}
+                />
 
 
             </div >
