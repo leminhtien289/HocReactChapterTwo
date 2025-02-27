@@ -34,6 +34,7 @@ class MyComponent extends React.Component {
 
         return (
             <>
+                <br></br>
                 <div className='a'>
                     <AddUserInfor
                         handleAddNewUser={this.handleAddNewUser} />

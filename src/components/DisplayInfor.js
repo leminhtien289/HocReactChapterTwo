@@ -17,9 +17,7 @@ class DisplayInfor extends React.Component {
         // destructuring array/object
         const { listUsers } = this.props;//object
 
-        // console.log(listUsers);
-        // console.table(listUsers);
-
+        // template + logic js
         return (
             <div className='display-infor-container'>
                 <img src={logo} />
