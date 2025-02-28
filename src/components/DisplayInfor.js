@@ -4,6 +4,8 @@ import logo from './../logo.svg';
 
 class DisplayInfor extends React.Component {
     constructor(props) {
+        console.log(">>> call constructor: 1")
+
         super(props);
 
         //babel complier
@@ -12,6 +14,20 @@ class DisplayInfor extends React.Component {
         }
     }
 
+    componentDidMount() {
+        console.log(">>> Call me component did mount");
+        setTimeout(() => {
+            document.title = 'Nahihi'
+        }, 3000);
+    };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(">>> Call me component did update", this.props, prevProps);
+        if (this.props.listUsers !== prevProps.listUsers) {
+            if (this.props.listUsers.length == 5)
+                alert("You have 5 users")
+        }
+    };
 
     handleShowHide = () => {
         this.setState({
@@ -19,6 +35,8 @@ class DisplayInfor extends React.Component {
         });
     };
     render() {
+        console.log(">>> call me render");
+
         //props: properties  
         // destructuring array/object
         const { listUsers } = this.props;//object
